@@ -54,6 +54,17 @@ export function addComponent(data, xtype) {
     node.unshift(obj);
 }
 
+export function copyComponent(data, i) {
+
+    let node = data.extLayout.parent;
+
+    let obj = JSON.parse(cleanView(data));
+
+    addMetadata([obj]);
+
+    node.splice(i, 0, obj);
+}
+
 let view = [{
     xtype: 'container',
     cls: 'main-panel',

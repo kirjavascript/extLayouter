@@ -2,7 +2,7 @@ import '../scss/index.scss'
 import * as d3 from './util/d3';
 import nodeEJS from '../html/node.html'; 
 import addEJS from '../html/add.html'; 
-import { view, cleanView, addComponent } from './view';
+import { view, cleanView, addComponent, copyComponent } from './view';
 import { icons } from './icons';
 import { xtypes, getGroup } from './extdata';
 import { read, write } from './editor';
@@ -106,6 +106,13 @@ function addEvents(selection) {
         })
 
     selection
+        .select('.copy')
+        .on('click', function(d,i) {
+            copyComponent(d, i);
+            draw({view});
+        })
+
+    selection
         .select('.add')
         .on('click', function(d) {
 
@@ -147,6 +154,8 @@ function addEvents(selection) {
 // ONLY SUPPORT LAYOUT SHIT layout / docked
 // have group names in dropdowns
 // add copy
+
+// finish extdata
 
 }
 

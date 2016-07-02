@@ -30,7 +30,6 @@ let xtypes = [
     {
         xtype: "buttongroup",
         group: "folder"
-
     },
     {
         xtype: "cartesian"
