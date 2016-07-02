@@ -9,11 +9,11 @@ import { read, write } from './editor';
 
 let treeView = d3.select('#treeView');
 
-function draw(obj, data) {
+export function draw({ view, obj = treeView, updateEditor = true }) {
 
-    write(cleanView(data));
+    updateEditor && write(cleanView(view));
 
-    drawTree(obj, data);
+    drawTree(obj, view);
 }
 
 function drawTree(obj, data) {
@@ -77,14 +77,14 @@ function addEvents(selection) {
         .select('.collapse')
         .on('click', function(d) {
             d.extLayout.collapsed = !d.extLayout.collapsed;
-            draw(treeView, view);
+            draw({view});
         })
 
     selection
         .select('.delete')
         .on('click', function(d,i) {
             d.extLayout.parent.splice(i,1);
-            draw(treeView, view);
+            draw({view});
         })
 
     selection
@@ -92,7 +92,7 @@ function addEvents(selection) {
         .on('click', function(d,i) {
             if (i != 0) {
                 [d.extLayout.parent[i-1],d.extLayout.parent[i]] = [d.extLayout.parent[i],d.extLayout.parent[i-1]];
-                draw(treeView, view);
+                draw({view});
             }
         })
 
@@ -101,7 +101,7 @@ function addEvents(selection) {
         .on('click', function(d,i) {
             if (i != d.extLayout.parent.length-1) {
                 [d.extLayout.parent[i+1],d.extLayout.parent[i]] = [d.extLayout.parent[i],d.extLayout.parent[i+1]];
-                draw(treeView, view);
+                draw({view});
             }
         })
 
@@ -138,21 +138,16 @@ function addEvents(selection) {
                 .on('click', function() {
                     addComponent(d, xtype.property('value'))
                     add.remove();
-                    draw(treeView, view);
+                    draw({view});
                 })
         })
 
 
-    // edit itemId
-    // input / output
 
-    // layout :)
+// ONLY SUPPORT LAYOUT SHIT layout / docked
+// have group names in dropdowns
+// add copy
 
-    // props popup (?)
-    // add copy
-    // post processor for output stripping _extLayouter
 }
 
-// load view
-
-draw(treeView, view);
+draw({view});

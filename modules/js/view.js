@@ -1,4 +1,5 @@
 import { getGroup } from './extdata';
+import { draw } from './index';
 
 function getExtLayout(parent) {
     return {
@@ -24,7 +25,17 @@ export function cleanView(data) {
         }
         return value;
     }, 4);
-    
+
+}
+
+export function loadView(data) {
+
+    let view = JSON.parse(data);
+
+    addMetadata(view);
+
+    draw({ view, updateEditor: false });
+
 }
 
 export function addComponent(data, xtype) {

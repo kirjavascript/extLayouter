@@ -1,7 +1,4 @@
 var icons = {
-    "folder": {
-        img: require('../icons/folder.svg')
-    },
     "arrRight": {
         img: require('../icons/next.svg'),
         class: 'collapse pointer'
@@ -41,6 +38,9 @@ var icons = {
     "copy": {
         img: require('../icons/copy.svg'),
         class: 'pointer'
+    },
+    "folder": {
+        img: require('../icons/folder.svg')
     },
     "document": {
         img: require('../icons/document.svg'),

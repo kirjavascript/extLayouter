@@ -1,5 +1,7 @@
 let programmaticEdit = false;
 
+import { loadView } from './view';
+
 let editor = ace.edit("editor");
 
     editor.$blockScrolling = Infinity;
@@ -9,8 +11,8 @@ let editor = ace.edit("editor");
     editor.setOptions({fontSize: "12pt", wrap: true});
     editor.getSession().on('change', function() {
 
-        //!programmaticEdit &&
-        //parse(editor.getValue());
+        !programmaticEdit &&
+        loadView(editor.getValue());
 
     });
 
