@@ -15,7 +15,7 @@ var icons = {
         class: 'pointer'
     },
     "delete": {
-        img: require('../icons/delete.svg'),
+        img: require('../icons/empty_trash.svg'),
         class: 'pointer'
     },
     "moveUp": {
@@ -24,6 +24,18 @@ var icons = {
     },
     "moveDown": {
         img: require('../icons/down.svg'),
+        class: 'pointer'
+    },
+    "add": {
+        img: require('../icons/plus.svg'),
+        class: 'pointer'
+    },
+    "ok": {
+        img: require('../icons/checkmark.svg'),
+        class: 'pointer'
+    },
+    "cancel": {
+        img: require('../icons/cancel.svg'),
         class: 'pointer'
     },
 };

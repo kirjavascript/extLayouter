@@ -1,14 +1,24 @@
 <?- icons[layout.collapsed?'arrRight':'arrDown'] ?>
+
 <?- icons.folder ?>
 
-<?= node.xtype ?> 
 
-<? if (node.itemId) { ?>
-[<?= node.itemId ?>] 
-<? } ?>
-edit
-remove
-up
-down
+<span class="commands">
+    <?- icons.add ?>
+    <?- icons.edit ?>
+    <?- icons.moveUp ?>
+    <?- icons.moveDown ?>
+    <?- icons.delete ?>
+</span>
 
-<!-- <hr /> -->
+<span class="info">
+
+    <a href="http://docs.sencha.com/extjs/6.0.2-classic/Ext.enums.Widget.html#property-<?= node.xtype ?>" target="_blank">
+        <?= node.xtype ?>
+    </a>
+
+    <? if (node.itemId) { ?>
+    [<?= node.itemId ?>] 
+    <? } ?>
+
+</span>

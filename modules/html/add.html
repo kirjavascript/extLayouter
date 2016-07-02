@@ -1,0 +1,18 @@
+<h2>Add Component</h2>
+
+<form>
+    <select class="xtypeLookup">
+        <option>Select xtype</option>
+        <? xtypes.forEach(function(d) { ?>
+            <option value="<?= d.xtype ?>">
+                <?= d.xtype ?>
+            </option>
+        <? }) ?>
+    </select>
+    <input type="text" class="xtype" placeholder="xtype"/>
+</form>
+
+<div class="action">
+    <?- icons.cancel ?>
+    <?- icons.ok ?>
+</div>

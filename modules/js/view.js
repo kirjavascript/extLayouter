@@ -1,12 +1,29 @@
-export function addMetadata(view) {
+let id = 0;
+
+function getExtLayout(parent) {
+    return {
+        collapsed: false,
+        parent
+    }
+}
+
+function addMetadata(view) {
     view.forEach(d => {
-        d.extLayout = {
-            collapsed: false
-        }
+        d.extLayout = getExtLayout(view);
         if (d.items) {
             addMetadata(d.items);
         }
     })
+}
+
+export function addComponent(data, xtype) {
+
+    let node = data.items || data.extLayout.parent;
+
+    node.unshift({
+        xtype,
+        extLayout: getExtLayout(node)
+    });
 }
 
 let view = [{

@@ -5,6 +5,9 @@ html, body {
 
 a {
     text-decoration: none;
+    font-weight: bold;
+    color: #3399ff;
+    letter-spacing: -1px;
 
     &:active,
     &:visited,
@@ -12,6 +15,14 @@ a {
     &:link {
         text-decoration: none;
     }
+}
+
+h1 {
+    margin: 10px 0px;
+}
+
+h2 {
+    margin: 0px 0px 10px 0px;
 }
 
 ::selection {
@@ -31,7 +42,7 @@ a {
     .item {
         border-top: 1px solid #BBB;
         border-left: 1px solid #BBB;
-        margin-left: 10px;
+        margin-left: 20px;
         background-color: #FFF;
     }
 
@@ -40,12 +51,19 @@ a {
     }
 
     .menu {
-        padding: 5px
+        padding: 5px;
+
+        .commands {
+            margin: 0px 20px;
+        }
+
+        .info {
+        }
     }
 
     .icon {
-        width: 15px;
-        height: 15px;
+        width: 20px;
+        height: 20px;
     }
 
     .pointer {
@@ -55,5 +73,22 @@ a {
     .xtype-container,
     .xtype-fieldset {
         background-color: #ffffe6;
+    }
+
+    .addComponent {
+        position: absolute;
+        border: 1px solid #BBB;
+        background-color: #FFF;
+        padding: 20px;
+
+        .ok, .cancel {
+            width: 30px;
+            height: 30px;
+        }
+
+        .action {
+            text-align: right;
+            margin-top: 10px;
+        }
     }
 }

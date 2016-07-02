@@ -394,11 +394,11 @@ export {
   window
 } from "d3-selection";
 
-export {
-  active,
-  interrupt,
-  transition
-} from "d3-transition";
+// export {
+//   active,
+//   interrupt,
+//   transition
+// } from "d3-transition";
 
 // export {
 //   axisTop,
