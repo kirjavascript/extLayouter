@@ -56,13 +56,20 @@ export function addComponent(data, xtype) {
 
 export function copyComponent(data, i) {
 
-    let node = data.extLayout.parent;
+    // TODO: fix
+
+    let node = data.items || data.extLayout.parent;
 
     let obj = JSON.parse(cleanView(data));
 
-    addMetadata([obj]);
+    if (data.items) {
+        addMetadata([obj]);
+    }
+    else {
+        obj.extLayout = getExtLayout(node);
+    }    
 
-    node.splice(i, 0, obj);
+    data.extLayout.parent.splice(i, 0, obj);
 }
 
 let view = [{

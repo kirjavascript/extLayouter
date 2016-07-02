@@ -20,6 +20,12 @@ a {
     }
 }
 
+select {
+    background: transparent;
+    border: 1px solid #BBB;
+    padding: 3px;
+}
+
 h1 {
     margin: 10px 0px;
 }
@@ -79,9 +85,11 @@ h2 {
             margin: 0px 20px;
         }
 
-        .itemId {
-            color: #999;
-            margin: 0px 20px;
+        .layoutData {
+            color: #666;
+            margin: 0px 5px;
+            float: right;
+            font-style: italic;
         }
     }
 
@@ -94,11 +102,12 @@ h2 {
         cursor: pointer;
     }
 
-    .addComponent {
+    .modal {
         position: fixed;
         border: 1px solid #BBB;
         background-color: #FFF;
         padding: 20px;
+        min-width: 380px;
 
         .ok, .cancel {
             width: 30px;

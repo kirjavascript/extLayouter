@@ -28,7 +28,10 @@ module.exports = {
                 test: /\.svg$/,
                 loader: 'svg-url?noquotes'
             },
-            { test: /\.html?$/, loader: "ejs-compiled-loader?delimiter=%3F" }
+            {
+                test: /\.html?$/,
+                loader: "ejs-compiled-loader?delimiter=%3F" 
+            }
         ],
     },
     plugins: [

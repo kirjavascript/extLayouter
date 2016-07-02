@@ -540,4 +540,55 @@ export function getGroup(xtype) {
     return obj ? obj.group || 'document' : 'document';
 }
 
-export { xtypes };
+let layouts = [
+    {
+        name: 'absolute',
+        childProps: ['x', 'y']
+    },
+    {
+        name: 'vbox',
+        props: ['pack', 'align'],
+        childProps: ['flex']
+    },
+    {
+        name: 'hbox',
+        props: ['pack', 'align'],
+        childProps: ['flex']
+    },
+    {
+        name: 'center'
+    },
+    {
+        name: 'fit'
+    },
+    {
+        name: 'column',
+        childProps: ['columnWidth']
+    },
+    {
+        name: 'table',
+        props: ['columns','tableAttrs'],
+        childProps: ['rowspan','colspan','cellCls']
+    },
+
+
+];
+
+export { xtypes, layouts };
+
+// only hit direct children
+// checkbox propz?
+
+// Absolute Layout
+// Accordion Layout
+// Border Layout
+// Card Layout
+// Card (Tabs)
+// Center Layout
+// Column Layout
+// Fit Layout
+// HBox Layout
+// Table Layout
+// VBox Layout
+
+// http://examples.sencha.com/extjs/6.0.2/examples/kitchensink/#layouts

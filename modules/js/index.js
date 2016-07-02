@@ -2,9 +2,10 @@ import '../scss/index.scss'
 import * as d3 from './util/d3';
 import nodeEJS from '../html/node.html'; 
 import addEJS from '../html/add.html'; 
+import layoutEJS from '../html/layout.html'; 
 import { view, cleanView, addComponent, copyComponent } from './view';
 import { icons } from './icons';
-import { xtypes, getGroup } from './extdata';
+import { xtypes, getGroup, layouts } from './extdata';
 import { read, write } from './editor';
 
 let treeView = d3.select('#treeView');
@@ -117,12 +118,12 @@ function addEvents(selection) {
         .on('click', function(d) {
 
             treeView
-                .selectAll('.addComponent')
+                .selectAll('.modal')
                 .remove()
 
             let add = treeView
                 .append('div')
-                .attr('class', 'addComponent')
+                .attr('class', 'modal')
                 .style('left', d3.event.clientX - 25 + 'px')
                 .style('top', d3.event.clientY + 10 + 'px')
                 .html(addEJS({ xtypes, icons }))
@@ -149,14 +150,35 @@ function addEvents(selection) {
                 })
         })
 
+    selection
+        .select('.layout')
+        .on('click', function() {
+            treeView
+                .selectAll('.modal')
+                .remove()
+
+            let layout = treeView
+                .append('div')
+                .attr('class', 'modal')
+                .style('left', d3.event.clientX - 25 + 'px')
+                .style('top', d3.event.clientY + 10 + 'px')
+                .html(layoutEJS({ icons, layouts }))
+
+            layout.select('.cancel')
+                .on('click', function() {
+                    layout.remove();
+                })
+        })
 
 
-// ONLY SUPPORT LAYOUT SHIT layout / docked
+// document layouts take object/string
+
 // have group names in dropdowns
-// add copy
-
 // finish extdata
 
+// different icon for non folders?
+
+// hover on component highlight code (mouseenter/mouseout)
 }
 
 draw({view});

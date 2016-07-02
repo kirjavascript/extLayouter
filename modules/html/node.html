@@ -8,11 +8,11 @@
 <span class="commands">
     <? if (node.items) { ?>
         <?- icons.add ?>
+        <?- icons.layout ?>
     <? } ?>
-    <?- icons.edit ?>
     <?- icons.moveUp ?>
     <?- icons.moveDown ?>
-    <?- icons.copy ?>
+    <?#- icons.copy ?>
     <?- icons.delete ?>
 </span>
 
@@ -22,9 +22,13 @@
         <?= node.xtype ?>
     </a>
 
-    <? if (node.itemId) { ?>
-        <span class="itemId">
-            <?= node.itemId ?>
+    <? if (node.layout) { ?>
+        <span class="layoutData">
+            <? if (typeof node.layout == "object") { ?>
+                <?= JSON.stringify(node.layout); ?>
+            <? } else { ?>
+                <?= node.layout ?>
+            <? } ?>
         </span>
     <? } ?>
 

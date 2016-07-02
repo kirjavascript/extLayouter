@@ -1,0 +1,15 @@
+<h2>Set Group Layout</h2>
+
+<select class="layout">
+    <option>Select layout</option>
+    <? layouts.forEach(function(d) { ?>
+        <option value="<?= d.name ?>">
+            <?= d.name ?>
+        </option>
+    <? }) ?>
+</select>
+
+<div class="action">
+    <?- icons.cancel ?>
+    <?- icons.ok ?>
+</div>

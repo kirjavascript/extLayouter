@@ -7,10 +7,6 @@ var icons = {
         img: require('../icons/expand.svg'),
         class: 'collapse pointer'
     },
-    "edit": {
-        img: require('../icons/edit.svg'),
-        class: 'pointer'
-    },
     "delete": {
         img: require('../icons/empty_trash.svg'),
         class: 'pointer'
@@ -39,8 +35,12 @@ var icons = {
         img: require('../icons/copy.svg'),
         class: 'pointer'
     },
+    "layout": {
+        img: require('../icons/four-squares.svg'),
+        class: 'pointer'
+    },
     "folder": {
-        img: require('../icons/folder.svg')
+        img: require('../icons/opened_folder.svg')
     },
     "document": {
         img: require('../icons/document.svg'),
@@ -57,7 +57,7 @@ var icons = {
 };
 
 Object.keys(icons).forEach(d => {
-    icons[d] = `<img src="${icons[d].img}" alt="${d}" class="icon ${d} ${icons[d].class||''}"/>`;
+    icons[d] = `<img src="${icons[d].img}" alt="${d}" title="${d}" class="icon ${d} ${icons[d].class||''}"/>`;
 })
 
 export { icons };
