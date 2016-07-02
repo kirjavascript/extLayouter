@@ -1,4 +1,4 @@
-let id = 0;
+import { getGroup } from './extdata';
 
 function getExtLayout(parent) {
     return {
@@ -20,10 +20,16 @@ export function addComponent(data, xtype) {
 
     let node = data.items || data.extLayout.parent;
 
-    node.unshift({
+    let obj = {
         xtype,
         extLayout: getExtLayout(node)
-    });
+    };
+
+    if (getGroup(xtype) == 'folder') {
+        obj.items = [];
+    }
+
+    node.unshift(obj);
 }
 
 let view = [{

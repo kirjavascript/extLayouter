@@ -1,5 +1,3 @@
-// http://docs.sencha.com/extjs/6.0.2-classic/Ext.enums.Widget.html#property-filefield
-
 let xtypes = [
     {
         xtype: "actioncolumn"
@@ -26,19 +24,24 @@ let xtypes = [
         xtype: "breadcrumb"
     },
     {
-        xtype: "button"
+        xtype: "button",
+        group: "field"
     },
     {
-        xtype: "buttongroup"
+        xtype: "buttongroup",
+        group: "folder"
+
     },
     {
         xtype: "cartesian"
     },
     {
-        xtype: "checkbox"
+        xtype: "checkbox",
+        group: "field"
     },
     {
-        xtype: "checkboxfield"
+        xtype: "checkboxfield",
+        group: "field"
     },
     {
         xtype: "checkboxgroup"
@@ -95,7 +98,8 @@ let xtypes = [
         xtype: "component"
     },
     {
-        xtype: "container"
+        xtype: "container",
+        group: "folder"
     },
     {
         xtype: "cycle"
@@ -113,16 +117,20 @@ let xtypes = [
         xtype: "dataview"
     },
     {
-        xtype: "datecolumn"
+        xtype: "datecolumn",
+        group: "clock"
     },
     {
-        xtype: "datefield"
+        xtype: "datefield",
+        group: "clock"
     },
     {
-        xtype: "datemenu"
+        xtype: "datemenu",
+        group: "clock"
     },
     {
-        xtype: "datepicker"
+        xtype: "datepicker",
+        group: "clock"
     },
     {
         xtype: "desktop"
@@ -143,13 +151,16 @@ let xtypes = [
         xtype: "explorer"
     },
     {
-        xtype: "field"
+        xtype: "field",
+        group: "field"
     },
     {
-        xtype: "fieldcontainer"
+        xtype: "fieldcontainer",
+        group: "folder"
     },
     {
-        xtype: "fieldset"
+        xtype: "fieldset",
+        group: "folder"
     },
     {
         xtype: "filebutton"
@@ -164,7 +175,8 @@ let xtypes = [
         xtype: "flash"
     },
     {
-        xtype: "form"
+        xtype: "form",
+        group: "folder"
     },
     {
         xtype: "gmappanel"
@@ -200,10 +212,12 @@ let xtypes = [
         xtype: "htmleditor"
     },
     {
-        xtype: "image"
+        xtype: "image",
+        group: "image"
     },
     {
-        xtype: "imagecomponent"
+        xtype: "imagecomponent",
+        group: "image"
     },
     {
         xtype: "interaction"
@@ -218,7 +232,8 @@ let xtypes = [
         xtype: "jsonpstore"
     },
     {
-        xtype: "label"
+        xtype: "label",
+        group: "field"
     },
     {
         xtype: "legend"
@@ -245,7 +260,8 @@ let xtypes = [
         xtype: "monthpicker"
     },
     {
-        xtype: "multiselect"
+        xtype: "multiselect",
+        group: "field"
     },
     {
         xtype: "multiselectfield"
@@ -266,13 +282,15 @@ let xtypes = [
         xtype: "numbercolumn"
     },
     {
-        xtype: "numberfield"
+        xtype: "numberfield",
+        group: "field"
     },
     {
         xtype: "pagingtoolbar"
     },
     {
-        xtype: "panel"
+        xtype: "panel",
+        group: "folder"
     },
     {
         xtype: "pickerfield"
@@ -308,7 +326,8 @@ let xtypes = [
         xtype: "quicktip"
     },
     {
-        xtype: "radio"
+        xtype: "radio",
+        group: "field"
     },
     {
         xtype: "radiofield"
@@ -386,19 +405,22 @@ let xtypes = [
         xtype: "surface"
     },
     {
-        xtype: "tab"
+        xtype: "tab",
+        group: "folder"
     },
     {
         xtype: "tabbar"
     },
     {
-        xtype: "tablepanel"
+        xtype: "tablepanel",
+        group: "folder"
     },
     {
         xtype: "tableview"
     },
     {
-        xtype: "tabpanel"
+        xtype: "tabpanel",
+        group: "folder"
     },
     {
         xtype: "tagfield"
@@ -425,19 +447,23 @@ let xtypes = [
         xtype: "templatecolumn"
     },
     {
-        xtype: "textarea"
+        xtype: "textarea",
+        group: "field"
     },
     {
         xtype: "textareafield"
     },
     {
-        xtype: "textfield"
+        xtype: "textfield",
+        group: "field"
     },
     {
-        xtype: "timefield"
+        xtype: "timefield",
+        group: "clock"
     },
     {
-        xtype: "timepicker"
+        xtype: "timepicker",
+        group: "clock"
     },
     {
         xtype: "tip"
@@ -491,7 +517,8 @@ let xtypes = [
         xtype: "video"
     },
     {
-        xtype: "viewport"
+        xtype: "viewport",
+        group: "folder"
     },
     {
         xtype: "wallpaper"
@@ -503,8 +530,15 @@ let xtypes = [
         xtype: "widgetcolumn"
     },
     {
-        xtype: "window"
+        xtype: "window",
+        group: "folder"
     },
 ];
+
+export function getGroup(xtype) {
+    let obj = xtypes.find(d => d.xtype == xtype);
+
+    return obj ? obj.group : 'document';
+}
 
 export { xtypes };

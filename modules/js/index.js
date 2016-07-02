@@ -4,9 +4,11 @@ import nodeEJS from '../html/node.html';
 import addEJS from '../html/add.html'; 
 import { view, addComponent } from './view';
 import { icons } from './icons';
-import { xtypes } from './extdata';
+import { xtypes, getGroup } from './extdata';
 
 let treeView = d3.select('#treeView');
+
+console.log(getGroup('box'))
 
 function draw(obj, data) {
 
@@ -17,8 +19,11 @@ function draw(obj, data) {
     branch
         .enter()
         .append('div')
-        .attr('class', d => `item${' xtype-'+d.xtype||''}`)
-        .each(function(d) {d.extLayout.node = this})
+        .attr('class', 'item')
+        .style('background-color', d => {
+            return getGroup(d.xtype) == 'folder'?'#ffffe6':'#FFF'
+        })
+        //.each(function(d) {d.extLayout.node = this})
         .merge(branch)
         .call(drawMenu)
         .each(function (d) {
@@ -45,7 +50,7 @@ function drawMenu(selection) {
         
     function setMenu(selection) {
         selection
-            .html(node => nodeEJS({ node, icons, layout: node.extLayout }))
+            .html(node => nodeEJS({ node, icons, layout: node.extLayout, getGroup }))
             .call(addEvents);
     }
 }
@@ -131,14 +136,13 @@ function addEvents(selection) {
                 })
         })
 
-    // icons
 
     // edit itemId
 
     // check if container when adding component
 
     // props popup (?)
-    // add copy (clone.svg)
+    // add copy
     // don't allow changing xtype
     // post processor for output stripping _extLayouter
 
