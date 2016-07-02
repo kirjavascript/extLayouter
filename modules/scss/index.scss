@@ -1,0 +1,59 @@
+html, body {
+    height: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+    text-decoration: none;
+
+    &:active,
+    &:visited,
+    &:hover,
+    &:link {
+        text-decoration: none;
+    }
+}
+
+::selection {
+    background-color: #000;
+    color: #FFF;
+}
+::-moz-selection {
+    background-color: #000;
+    color: #FFF;
+}
+
+#treeView {
+
+    border-bottom: 1px solid #BBB;
+    border-right: 1px solid #BBB;
+
+    .item {
+        border-top: 1px solid #BBB;
+        border-left: 1px solid #BBB;
+        margin-left: 10px;
+        background-color: #FFF;
+    }
+
+    > .item {
+        margin-left: 0px;
+    }
+
+    .menu {
+        padding: 5px
+    }
+
+    .icon {
+        width: 15px;
+        height: 15px;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    .xtype-container,
+    .xtype-fieldset {
+        background-color: #ffffe6;
+    }
+}
