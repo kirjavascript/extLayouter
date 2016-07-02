@@ -538,7 +538,7 @@ let xtypes = [
 export function getGroup(xtype) {
     let obj = xtypes.find(d => d.xtype == xtype);
 
-    return obj ? obj.group : 'document';
+    return obj ? obj.group || 'document' : 'document';
 }
 
 export { xtypes };

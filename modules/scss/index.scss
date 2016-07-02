@@ -1,6 +1,9 @@
 html, body {
     height: 100%;
     font-family: 'Source Sans Pro', sans-serif;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
 }
 
 a {
@@ -34,6 +37,25 @@ h2 {
     color: #FFF;
 }
 
+#editor {
+    width: 40%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+}
+
+#treeWrap {
+
+    width: 57%;
+    position: fixed;
+    top: 0px;
+    left: 40%;
+    height: 100%;
+    padding: 0px 20px;
+    overflow-y: auto;
+}
+
 #treeView {
 
     border-bottom: 1px solid #BBB;
@@ -57,7 +79,9 @@ h2 {
             margin: 0px 20px;
         }
 
-        .info {
+        .itemId {
+            color: #999;
+            margin: 0px 20px;
         }
     }
 
@@ -71,7 +95,7 @@ h2 {
     }
 
     .addComponent {
-        position: absolute;
+        position: fixed;
         border: 1px solid #BBB;
         background-color: #FFF;
         padding: 20px;
@@ -87,3 +111,4 @@ h2 {
         }
     }
 }
+

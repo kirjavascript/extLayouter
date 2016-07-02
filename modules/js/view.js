@@ -16,6 +16,17 @@ function addMetadata(view) {
     })
 }
 
+export function cleanView(data) {
+
+    return JSON.stringify(data, function(key, value) {
+        if (key == 'extLayout') {
+            return;
+        }
+        return value;
+    }, 4);
+    
+}
+
 export function addComponent(data, xtype) {
 
     let node = data.items || data.extLayout.parent;
@@ -73,7 +84,8 @@ let view = [{
         },
         {
             xtype: 'container',
-            height: 50
+            height: 50,
+            items: []
         },
         {
             xtype: 'fieldset',

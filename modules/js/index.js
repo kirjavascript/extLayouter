@@ -2,15 +2,21 @@ import '../scss/index.scss'
 import * as d3 from './util/d3';
 import nodeEJS from '../html/node.html'; 
 import addEJS from '../html/add.html'; 
-import { view, addComponent } from './view';
+import { view, cleanView, addComponent } from './view';
 import { icons } from './icons';
 import { xtypes, getGroup } from './extdata';
+import { read, write } from './editor';
 
 let treeView = d3.select('#treeView');
 
-console.log(getGroup('box'))
-
 function draw(obj, data) {
+
+    write(cleanView(data));
+
+    drawTree(obj, data);
+}
+
+function drawTree(obj, data) {
 
     let branch = obj.selectAll('.item').data(data)
 
@@ -29,7 +35,7 @@ function draw(obj, data) {
         .each(function (d) {
             d.items &&
             d3.select(this)
-                .call(draw, d => d.items)
+                .call(drawTree, d => d.items)
         })
         .call(collapse)
         .order()
@@ -138,15 +144,13 @@ function addEvents(selection) {
 
 
     // edit itemId
+    // input / output
 
-    // check if container when adding component
+    // layout :)
 
     // props popup (?)
     // add copy
-    // don't allow changing xtype
     // post processor for output stripping _extLayouter
-
-    // on end, add
 }
 
 // load view

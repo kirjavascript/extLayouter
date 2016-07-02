@@ -38,6 +38,10 @@ var icons = {
         img: require('../icons/cancel.svg'),
         class: 'pointer'
     },
+    "copy": {
+        img: require('../icons/copy.svg'),
+        class: 'pointer'
+    },
     "document": {
         img: require('../icons/document.svg'),
     },

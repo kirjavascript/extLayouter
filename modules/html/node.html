@@ -1,13 +1,18 @@
-<?- icons[layout.collapsed?'arrRight':'arrDown'] ?>
+<? if (node.items) { ?>
+    <?- icons[layout.collapsed?'arrRight':'arrDown'] ?>
+<? } ?>
 
 <?- icons[getGroup(node.xtype)] ?>
-<?= getGroup(node.xtype) ?>
+
 
 <span class="commands">
-    <?- icons.add ?>
+    <? if (node.items) { ?>
+        <?- icons.add ?>
+    <? } ?>
     <?- icons.edit ?>
     <?- icons.moveUp ?>
     <?- icons.moveDown ?>
+    <?- icons.copy ?>
     <?- icons.delete ?>
 </span>
 
@@ -18,7 +23,9 @@
     </a>
 
     <? if (node.itemId) { ?>
-    [<?= node.itemId ?>] 
+        <span class="itemId">
+            <?= node.itemId ?>
+        </span>
     <? } ?>
 
 </span>
