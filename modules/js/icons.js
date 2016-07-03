@@ -36,7 +36,15 @@ var icons = {
         class: 'pointer'
     },
     "layout": {
+        img: require('../icons/arrows.svg'),
+        class: 'pointer'
+    },
+    "pack": {
         img: require('../icons/four-squares.svg'),
+        class: 'pointer'
+    },
+    "align": {
+        img: require('../icons/collect.svg'),
         class: 'pointer'
     },
     "folder": {

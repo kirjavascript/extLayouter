@@ -21,20 +21,33 @@
         <?= node.xtype ?>
     </a>
 
-    <? if (node.layout) { ?>
+    <? if (getGroup(node.xtype) == 'folder') { ?>
         <span class="layoutData">
-        
-            <? if (typeof node.layout == "string") { 
-                node.layout = { type: node.layout };
-            } ?>
 
             <span class="type">
                 <span class="label">
-                    <?= node.layout.type ?>
+                    <?= layoutData.type ?>
                 </span>
                 <?- icons.layout ?>
             </span>
             
+            <? if (layoutData.type == 'vbox') { ?>
+
+                <span class="pack">
+                    <span class="label">
+                        <?= layoutData.pack ?>
+                    </span>
+                    <?- icons.pack ?>
+                </span>
+                
+                <span class="align">
+                    <span class="label">
+                        <?= layoutData.align ?>
+                    </span>
+                    <?- icons.align ?>
+                </span>
+
+            <? } ?>
 
         </span>
     <? } ?>

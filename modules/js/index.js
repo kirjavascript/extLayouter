@@ -2,7 +2,7 @@ import '../scss/index.scss'
 import * as d3 from './util/d3';
 import nodeEJS from '../html/node.html'; 
 import addEJS from '../html/add.html'; 
-import layoutEJS from '../html/layout.html'; 
+//import layoutEJS from '../html/layout.html'; 
 import { view, cleanView, addComponent, copyComponent } from './view';
 import { icons } from './icons';
 import { xtypes, getGroup, layouts } from './extdata';
@@ -60,7 +60,7 @@ function drawMenu(selection) {
         
     function setMenu(selection) {
         selection
-            .html(node => nodeEJS({ node, icons, layout: node.extLayout, getGroup }))
+            .html(node => nodeEJS({ node, icons, layout: node.extLayout, getGroup, layoutData: getLayoutData(node) }))
             .call(addEvents);
     }
 }
@@ -85,6 +85,41 @@ function JSONErrorUI(error) {
         .attr('class', 'JSONError')
         .merge(selection)
         .html(d => d);
+}
+
+function getLayoutData(node) {
+    if (typeof node.layout == 'undefined') {
+        return {};
+    }
+    else if (typeof node.layout == "string") { 
+        return { type: node.layout };
+    }
+    else {
+        return node.layout;
+    }
+}
+
+function setLayoutData(node, property, value) {
+    if (property == 'type' && value == 'none') {
+        delete node.layout;
+    }
+    else if (typeof node.layout == 'undefined' && property == 'type') {
+        node.layout = value;
+    }
+    else if (typeof node.layout == 'undefined') {
+        node.layout = {};
+        node.layout[property] = value;
+    }
+    else if (typeof node.layout == 'string' && property == 'type') {
+        node.layout = value;
+    }
+    else if (typeof node.layout == 'string') {
+        node.layout = { type: node.layout };
+        node.layout[property] = value;
+    }
+    else {
+        node.layout[property] = value;
+    }
 }
 
 function addEvents(selection) {
@@ -165,30 +200,35 @@ function addEvents(selection) {
                 })
         })
 
-    // selection
-    //     .select('.layout')
-    //     .on('click', function() {
-    //         let layout = treeView
-    //             .selectAll('.modal')
-    //             .data([1])
-
-    //         layout.enter()
-    //             .append('div')
-    //             .attr('class', 'modal')
-    //             .merge(layout)
-    //             .style('left', d3.event.clientX - 25 + 'px')
-    //             .style('top', d3.event.clientY + 10 + 'px')
-    //             .html(layoutEJS({ icons, layouts }))
-
-    //         layout.select('.cancel')
-    //             .on('click', function() {
-    //                 layout.remove();
-    //             })
-    //     })
-
     let layout = selection.select('.layoutData');
 
     layout.select('.type')
+        .on('click', function(d) {
+            let type = d3.select(this).selectAll('.dropdown')
+                .data([1]);
+
+                console.log(this)
+
+            type.enter()
+                .insert('div','div')
+                .attr('class', 'dropdown')
+                .selectAll('.option')
+                .data(layouts.type)
+                .enter()
+                .append('div')
+                .attr('class','option')
+                .html(d => d)
+                .on('click', function(opt) {
+                    setLayoutData(d, 'type', opt);
+                    draw({view});
+                })
+
+            type = type.merge(type);
+
+            outerClick('.dropdown');
+        })
+
+    layout.select('.pack')
         .on('click', function(d) {
             let type = d3.select(this).selectAll('.dropdown')
                 .data([1]);
@@ -197,35 +237,55 @@ function addEvents(selection) {
                 .insert('div','div')
                 .attr('class', 'dropdown')
                 .selectAll('.option')
-                .data(layouts)
+                .data(layouts['pack'])
                 .enter()
                 .append('div')
                 .attr('class','option')
-                .html(d => d.type)
+                .html(d => d)
                 .on('click', function(opt) {
-                    if (opt.type == 'none') {
-                        delete d.layout;
-                    }
-                    else {
-                        d.layout.type = opt.type;
-                    }
+                    setLayoutData(d, 'pack', opt);
                     draw({view});
                 })
 
             type = type.merge(type);
 
+            outerClick('.dropdown');
+        })
+
+    layout.select('.align')
+        .on('click', function(d) {
+            let type = d3.select(this).selectAll('.dropdown')
+                .data([1]);
+
+            type.enter()
+                .insert('div','div')
+                .attr('class', 'dropdown')
+                .selectAll('.option')
+                .data(layouts['align'])
+                .enter()
+                .append('div')
+                .attr('class','option')
+                .html(d => d)
+                .on('click', function(opt) {
+                    setLayoutData(d, 'align', opt);
+                    draw({view});
+                })
+
+            type = type.merge(type);
 
             outerClick('.dropdown');
         })
 
+// GENERICISE THE DROPDOWN, FFS
 
-// document layouts take object/string
+// document layout take object/string
 
 // have group names in dropdowns
 // finish extdata
 // view JSON modal
 
 // different icon for non folders?
+// cleanView set order keys
 
 // hover on component highlight code (mouseenter/mouseout)
 }
@@ -234,11 +294,13 @@ function addEvents(selection) {
 
 function outerClick(selector) {
     let dropClick = true;
+
+    let body = d3.select(document.body);
     
-    treeView.on('click', function() {
+    body.on('click', function() {
         if (!dropClick) {
             d3.selectAll(selector).remove();
-            treeView.on('click', null)
+            body.on('click', null)
         }
         dropClick = false;
     })

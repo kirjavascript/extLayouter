@@ -540,44 +540,16 @@ export function getGroup(xtype) {
     return obj ? obj.group || 'document' : 'document';
 }
 
-let layouts = [
-    {
-        type: 'none'
-    },
-    {
-        type: 'absolute',
-        childProps: ['x', 'y']
-    },
-    {
-        type: 'vbox',
-        props: ['pack', 'align'],
-        childProps: ['flex', 'docked']
-    },
-    {
-        type: 'hbox',
-        props: ['pack', 'align'],
-        childProps: ['flex', 'docked']
-    },
-    {
-        type: 'center'
-    },
-    {
-        type: 'fit'
-    },
-    {
-        type: 'column',
-        childProps: ['columnWidth']
-    },
-    {
-        type: 'table',
-        props: ['columns','tableAttrs'],
-        childProps: ['rowspan','colspan','cellCls']
-    },
-
-
-];
+let layouts = {
+    type: ['none','absolute','vbox','hbox','center','fit','column','table'],
+    pack: ['none', 'start', 'center','end'],
+    align: ['none', 'begin','middle','end','stretch','stretchmax'],
+};
 
 export { xtypes, layouts };
+
+
+// http://docs.sencha.com/extjs/6.0.2-classic/Ext.layout.container.VBox.html#cfg-pack
 
 // only hit direct children
 // checkbox propz?
