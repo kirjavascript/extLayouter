@@ -542,31 +542,34 @@ export function getGroup(xtype) {
 
 let layouts = [
     {
-        name: 'absolute',
+        type: 'none'
+    },
+    {
+        type: 'absolute',
         childProps: ['x', 'y']
     },
     {
-        name: 'vbox',
+        type: 'vbox',
         props: ['pack', 'align'],
-        childProps: ['flex']
+        childProps: ['flex', 'docked']
     },
     {
-        name: 'hbox',
+        type: 'hbox',
         props: ['pack', 'align'],
-        childProps: ['flex']
+        childProps: ['flex', 'docked']
     },
     {
-        name: 'center'
+        type: 'center'
     },
     {
-        name: 'fit'
+        type: 'fit'
     },
     {
-        name: 'column',
+        type: 'column',
         childProps: ['columnWidth']
     },
     {
-        name: 'table',
+        type: 'table',
         props: ['columns','tableAttrs'],
         childProps: ['rowspan','colspan','cellCls']
     },

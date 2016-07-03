@@ -10,11 +10,14 @@ import { read, write } from './editor';
 
 let treeView = d3.select('#treeView');
 
-export function draw({ view, obj = treeView, updateEditor = true }) {
+export function draw({ view, obj = treeView, updateEditor = true, JSONError }) {
 
-    updateEditor && write(cleanView(view));
+    JSONErrorUI(JSONError);
 
-    drawTree(obj, view);
+    if (!JSONError) {
+        updateEditor && write(cleanView(view));
+        drawTree(obj, view);
+    }
 }
 
 function drawTree(obj, data) {
@@ -73,6 +76,17 @@ function collapse(selection) {
         })
 }
 
+function JSONErrorUI(error) {
+    let selection = treeView.selectAll('.JSONError')
+        .data(error?[error]:[]);
+    selection.exit().remove();
+    selection.enter()
+        .insert('div','div')
+        .attr('class', 'JSONError')
+        .merge(selection)
+        .html(d => d);
+}
+
 function addEvents(selection) {
     selection
         .select('.collapse')
@@ -117,16 +131,17 @@ function addEvents(selection) {
         .select('.add')
         .on('click', function(d) {
 
-            treeView
-                .selectAll('.modal')
-                .remove()
-
             let add = treeView
+                .selectAll('.modal')
+                .data([1]);
+
+            add = add.enter()
                 .append('div')
                 .attr('class', 'modal')
+                .html(addEJS({ xtypes, icons }))
+                .merge(add)
                 .style('left', d3.event.clientX - 25 + 'px')
                 .style('top', d3.event.clientY + 10 + 'px')
-                .html(addEJS({ xtypes, icons }))
 
             add.select('.cancel')
                 .on('click', function() {
@@ -150,24 +165,57 @@ function addEvents(selection) {
                 })
         })
 
-    selection
-        .select('.layout')
-        .on('click', function() {
-            treeView
-                .selectAll('.modal')
-                .remove()
+    // selection
+    //     .select('.layout')
+    //     .on('click', function() {
+    //         let layout = treeView
+    //             .selectAll('.modal')
+    //             .data([1])
 
-            let layout = treeView
+    //         layout.enter()
+    //             .append('div')
+    //             .attr('class', 'modal')
+    //             .merge(layout)
+    //             .style('left', d3.event.clientX - 25 + 'px')
+    //             .style('top', d3.event.clientY + 10 + 'px')
+    //             .html(layoutEJS({ icons, layouts }))
+
+    //         layout.select('.cancel')
+    //             .on('click', function() {
+    //                 layout.remove();
+    //             })
+    //     })
+
+    let layout = selection.select('.layoutData');
+
+    layout.select('.type')
+        .on('click', function(d) {
+            let type = d3.select(this).selectAll('.dropdown')
+                .data([1]);
+
+            type.enter()
+                .insert('div','div')
+                .attr('class', 'dropdown')
+                .selectAll('.option')
+                .data(layouts)
+                .enter()
                 .append('div')
-                .attr('class', 'modal')
-                .style('left', d3.event.clientX - 25 + 'px')
-                .style('top', d3.event.clientY + 10 + 'px')
-                .html(layoutEJS({ icons, layouts }))
-
-            layout.select('.cancel')
-                .on('click', function() {
-                    layout.remove();
+                .attr('class','option')
+                .html(d => d.type)
+                .on('click', function(opt) {
+                    if (opt.type == 'none') {
+                        delete d.layout;
+                    }
+                    else {
+                        d.layout.type = opt.type;
+                    }
+                    draw({view});
                 })
+
+            type = type.merge(type);
+
+
+            outerClick('.dropdown');
         })
 
 
@@ -175,10 +223,25 @@ function addEvents(selection) {
 
 // have group names in dropdowns
 // finish extdata
+// view JSON modal
 
 // different icon for non folders?
 
 // hover on component highlight code (mouseenter/mouseout)
+}
+
+//let dropClick = false;
+
+function outerClick(selector) {
+    let dropClick = true;
+    
+    treeView.on('click', function() {
+        if (!dropClick) {
+            d3.selectAll(selector).remove();
+            treeView.on('click', null)
+        }
+        dropClick = false;
+    })
 }
 
 draw({view});

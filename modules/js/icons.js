@@ -20,7 +20,7 @@ var icons = {
         class: 'pointer'
     },
     "add": {
-        img: require('../icons/plus.svg'),
+        img: require('../icons/plus-circle.svg'),
         class: 'pointer'
     },
     "ok": {

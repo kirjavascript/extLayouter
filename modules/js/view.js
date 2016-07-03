@@ -30,11 +30,16 @@ export function cleanView(data) {
 
 export function loadView(data) {
 
-    let view = JSON.parse(data);
+    try {
+        let view = JSON.parse(data);
 
-    addMetadata(view);
+        addMetadata(view);
 
-    draw({ view, updateEditor: false });
+        draw({ view, updateEditor: false });
+    }
+    catch (e) { 
+        draw({ JSONError: e })
+    }
 
 }
 
@@ -200,12 +205,12 @@ let view = [{
                     items: [
                         {
                             xtype: 'checkboxfield',
-                            name : 'signup'
+                            name : ''
                         },
                         {
                             xtype: 'label',
-                            cls: 'signup',
-                            html: 'Please sign me up to emails so I can be the first to know about offers, special treats, events and news!'
+                            cls: '',
+                            html: ''
                         }
                     ]
                 }

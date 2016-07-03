@@ -3,7 +3,6 @@ html, body {
     font-family: 'Source Sans Pro', sans-serif;
     overflow: hidden;
     margin: 0px;
-    padding: 0px;
 }
 
 a {
@@ -86,10 +85,19 @@ h2 {
         }
 
         .layoutData {
-            color: #666;
-            margin: 0px 5px;
+            // color: #666;
+            // margin: 0px 5px;
             float: right;
             font-style: italic;
+            font-weight: bold;
+            color: #3399ff;
+            letter-spacing: -1px;
+            cursor: pointer;
+            position: relative;
+
+            .label {
+                padding: 0px 5px;
+            }
         }
     }
 
@@ -108,6 +116,7 @@ h2 {
         background-color: #FFF;
         padding: 20px;
         min-width: 380px;
+        z-index: 2;
 
         .ok, .cancel {
             width: 30px;
@@ -118,6 +127,27 @@ h2 {
             text-align: right;
             margin-top: 10px;
         }
+    }
+
+    .dropdown {
+        position: absolute;
+        right: 0px;
+        border: 1px solid #BBB;
+        background-color: #FFF;
+        z-index: 2;
+
+        .option {
+            //text-align: right;
+            padding: 5px;
+        }
+    }
+
+    .JSONError {
+        padding: 5px;
+        color: #eff1f5;
+        background: #bf616a;
+        border-top: 1px solid #BBB;
+        border-left: 1px solid #BBB;
     }
 }
 
