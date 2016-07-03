@@ -26,7 +26,7 @@ module.exports = {
             },
             {
                 test: /\.svg$/,
-                loader: 'svg-url?noquotes'
+                loader: 'svg-url?noquotes!svgo'
             },
             {
                 test: /\.html?$/,
@@ -38,7 +38,7 @@ module.exports = {
         new copy([
             { from: './templates', to: '.'},
         ]),
-    ]
+    ],
 };
 
 
