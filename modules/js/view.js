@@ -5,7 +5,7 @@ function getExtLayout(parent) {
     return {
         collapsed: false,
         parent
-    }
+    };
 }
 
 function addMetadata(view) {
@@ -14,7 +14,7 @@ function addMetadata(view) {
         if (d.items) {
             addMetadata(d.items);
         }
-    })
+    });
 }
 
 export function cleanView(data) {
@@ -38,7 +38,7 @@ export function loadView(data) {
         draw({ view, updateEditor: false });
     }
     catch (e) { 
-        draw({ JSONError: e })
+        draw({ JSONError: e });
     }
 
 }
@@ -84,7 +84,7 @@ let view = [{
 
     layout: {
         type: 'vbox',
-        pack: 'stretch',
+        pack: 'center',
         align: 'stretch'
     },
 
@@ -100,7 +100,7 @@ let view = [{
                     xtype: 'image',
                     itemId: 'image',
                     src: 'resources/images/logo.png',
-                    docked: 'right'
+                    dock: 'right'
                 },
                 {
                     itemId: 'venueSelection',
@@ -112,7 +112,7 @@ let view = [{
                     src: 'resources/images/icon-cog.png',
                     cls: 'cog',
                     itemId: 'cog',
-                    docked: 'left'
+                    dock: 'left'
                 }
             ]
         },
@@ -169,9 +169,9 @@ let view = [{
                     cls: 'checkbox',
 
                     layout: {
-                       type: 'hbox',
-                       align: 'left',
-                       pack: 'left'
+                        type: 'hbox',
+                        align: 'left',
+                        pack: 'left'
                     },
 
                     items: [
@@ -197,9 +197,9 @@ let view = [{
                     cls: 'checkbox',
 
                     layout: {
-                       type: 'hbox',
-                       align: 'left',
-                       pack: 'left'
+                        type: 'hbox',
+                        align: 'left',
+                        pack: 'left'
                     },
 
                     items: [
@@ -221,20 +221,20 @@ let view = [{
             xtype: 'container',
             cls: 'nav',
             layout: 'hbox',
-            docked: 'bottom',
+            dock: 'bottom',
 
             items: [
                 {
                     xtype: 'button',
                     text: 'Reset',
                     itemId: 'reset',
-                    docked: 'left'
+                    dock: 'left'
                 },
                 {
                     xtype: 'button',
                     text: 'Next',
                     itemId: 'startLoop',
-                    docked: 'right'
+                    dock: 'right'
                 }
             ]
         }

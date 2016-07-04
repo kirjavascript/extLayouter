@@ -1,537 +1,537 @@
 let xtypes = [
     {
-        xtype: "actioncolumn"
+        xtype: 'actioncolumn'
     },
     {
-        xtype: "axis"
+        xtype: 'axis'
     },
     {
-        xtype: "axis3d"
+        xtype: 'axis3d'
     },
     {
-        xtype: "booleancolumn"
+        xtype: 'booleancolumn'
     },
     {
-        xtype: "bordersplitter"
+        xtype: 'bordersplitter'
     },
     {
-        xtype: "boundlist"
+        xtype: 'boundlist'
     },
     {
-        xtype: "box"
+        xtype: 'box'
     },
     {
-        xtype: "breadcrumb"
+        xtype: 'breadcrumb'
     },
     {
-        xtype: "button",
-        group: "field"
+        xtype: 'button',
+        group: 'field'
     },
     {
-        xtype: "buttongroup",
-        group: "folder"
+        xtype: 'buttongroup',
+        group: 'folder'
     },
     {
-        xtype: "cartesian"
+        xtype: 'cartesian'
     },
     {
-        xtype: "checkbox",
-        group: "field"
+        xtype: 'checkbox',
+        group: 'field'
     },
     {
-        xtype: "checkboxfield",
-        group: "field"
+        xtype: 'checkboxfield'
     },
     {
-        xtype: "checkboxgroup"
+        xtype: 'checkboxgroup',
+        group: 'folder'
     },
     {
-        xtype: "checkcolumn"
+        xtype: 'checkcolumn'
     },
     {
-        xtype: "colorbutton"
+        xtype: 'colorbutton'
     },
     {
-        xtype: "colorfield"
+        xtype: 'colorfield'
     },
     {
-        xtype: "colormenu"
+        xtype: 'colormenu'
     },
     {
-        xtype: "colorpicker"
+        xtype: 'colorpicker'
     },
     {
-        xtype: "colorpickercolormap"
+        xtype: 'colorpickercolormap'
     },
     {
-        xtype: "colorpickercolorpreview"
+        xtype: 'colorpickercolorpreview'
     },
     {
-        xtype: "colorpickerslider"
+        xtype: 'colorpickerslider'
     },
     {
-        xtype: "colorpickerslideralpha"
+        xtype: 'colorpickerslideralpha'
     },
     {
-        xtype: "colorpickersliderhue"
+        xtype: 'colorpickersliderhue'
     },
     {
-        xtype: "colorpickerslidersaturation"
+        xtype: 'colorpickerslidersaturation'
     },
     {
-        xtype: "colorpickerslidervalue"
+        xtype: 'colorpickerslidervalue'
     },
     {
-        xtype: "colorselector"
+        xtype: 'colorselector'
     },
     {
-        xtype: "columnsplitter"
+        xtype: 'columnsplitter'
     },
     {
-        xtype: "combo"
+        xtype: 'combo'
     },
     {
-        xtype: "combobox"
+        xtype: 'combobox'
     },
     {
-        xtype: "component"
+        xtype: 'component'
     },
     {
-        xtype: "container",
-        group: "folder"
+        xtype: 'container',
+        group: 'folder'
     },
     {
-        xtype: "cycle"
+        xtype: 'cycle'
     },
     {
-        xtype: "dashboard"
+        xtype: 'dashboard'
     },
     {
-        xtype: "dashboard-column"
+        xtype: 'dashboard-column'
     },
     {
-        xtype: "dashboard-panel"
+        xtype: 'dashboard-panel'
     },
     {
-        xtype: "dataview"
+        xtype: 'dataview'
     },
     {
-        xtype: "datecolumn",
-        group: "clock"
+        xtype: 'datecolumn',
+        group: 'clock'
     },
     {
-        xtype: "datefield",
-        group: "clock"
+        xtype: 'datefield',
+        group: 'clock'
     },
     {
-        xtype: "datemenu",
-        group: "clock"
+        xtype: 'datemenu',
+        group: 'clock'
     },
     {
-        xtype: "datepicker",
-        group: "clock"
+        xtype: 'datepicker',
+        group: 'clock'
     },
     {
-        xtype: "desktop"
+        xtype: 'desktop'
     },
     {
-        xtype: "displayfield"
+        xtype: 'displayfield'
     },
     {
-        xtype: "draw"
+        xtype: 'draw'
     },
     {
-        xtype: "editor"
+        xtype: 'editor'
     },
     {
-        xtype: "eventrecordermanager"
+        xtype: 'eventrecordermanager'
     },
     {
-        xtype: "explorer"
+        xtype: 'explorer'
     },
     {
-        xtype: "field",
-        group: "field"
+        xtype: 'field',
+        group: 'field'
     },
     {
-        xtype: "fieldcontainer",
-        group: "folder"
+        xtype: 'fieldcontainer',
+        group: 'folder'
     },
     {
-        xtype: "fieldset",
-        group: "folder"
+        xtype: 'fieldset',
+        group: 'folder'
     },
     {
-        xtype: "filebutton"
+        xtype: 'filebutton'
     },
     {
-        xtype: "filefield"
+        xtype: 'filefield'
     },
     {
-        xtype: "fileuploadfield"
+        xtype: 'fileuploadfield'
     },
     {
-        xtype: "flash"
+        xtype: 'flash'
     },
     {
-        xtype: "form",
-        group: "folder"
+        xtype: 'form',
+        group: 'folder'
     },
     {
-        xtype: "gmappanel"
+        xtype: 'gmappanel'
     },
     {
-        xtype: "grid"
+        xtype: 'grid'
     },
     {
-        xtype: "gridcolumn"
+        xtype: 'gridcolumn'
     },
     {
-        xtype: "gridpanel"
+        xtype: 'gridpanel'
     },
     {
-        xtype: "gridview"
+        xtype: 'gridview'
     },
     {
-        xtype: "grouptabpanel"
+        xtype: 'grouptabpanel'
     },
     {
-        xtype: "header"
+        xtype: 'header'
     },
     {
-        xtype: "headercontainer"
+        xtype: 'headercontainer'
     },
     {
-        xtype: "hidden"
+        xtype: 'hidden'
     },
     {
-        xtype: "hiddenfield"
+        xtype: 'hiddenfield'
     },
     {
-        xtype: "htmleditor"
+        xtype: 'htmleditor'
     },
     {
-        xtype: "image",
-        group: "image"
+        xtype: 'image',
+        group: 'image'
     },
     {
-        xtype: "imagecomponent",
-        group: "image"
+        xtype: 'imagecomponent',
+        group: 'image'
     },
     {
-        xtype: "interaction"
+        xtype: 'interaction'
     },
     {
-        xtype: "itemselector"
+        xtype: 'itemselector'
     },
     {
-        xtype: "itemselectorfield"
+        xtype: 'itemselectorfield'
     },
     {
-        xtype: "jsonpstore"
+        xtype: 'jsonpstore'
     },
     {
-        xtype: "label",
-        group: "field"
+        xtype: 'label',
+        group: 'field'
     },
     {
-        xtype: "legend"
+        xtype: 'legend'
     },
     {
-        xtype: "loadmask"
+        xtype: 'loadmask'
     },
     {
-        xtype: "menu"
+        xtype: 'menu'
     },
     {
-        xtype: "menucheckitem"
+        xtype: 'menucheckitem'
     },
     {
-        xtype: "menuitem"
+        xtype: 'menuitem'
     },
     {
-        xtype: "menuseparator"
+        xtype: 'menuseparator'
     },
     {
-        xtype: "messagebox"
+        xtype: 'messagebox'
     },
     {
-        xtype: "monthpicker"
+        xtype: 'monthpicker'
     },
     {
-        xtype: "multiselect",
-        group: "field"
+        xtype: 'multiselect',
+        group: 'field'
     },
     {
-        xtype: "multiselectfield"
+        xtype: 'multiselectfield'
     },
     {
-        xtype: "multiselector"
+        xtype: 'multiselector'
     },
     {
-        xtype: "multiselector-search"
+        xtype: 'multiselector-search'
     },
     {
-        xtype: "multislider"
+        xtype: 'multislider'
     },
     {
-        xtype: "mzpivotgrid"
+        xtype: 'mzpivotgrid'
     },
     {
-        xtype: "numbercolumn"
+        xtype: 'numbercolumn'
     },
     {
-        xtype: "numberfield",
-        group: "field"
+        xtype: 'numberfield',
+        group: 'field'
     },
     {
-        xtype: "pagingtoolbar"
+        xtype: 'pagingtoolbar'
     },
     {
-        xtype: "panel",
-        group: "folder"
+        xtype: 'panel',
+        group: 'folder'
     },
     {
-        xtype: "pickerfield"
+        xtype: 'pickerfield'
     },
     {
-        xtype: "pivotconfigcolumn"
+        xtype: 'pivotconfigcolumn'
     },
     {
-        xtype: "pivotconfigcontainer"
+        xtype: 'pivotconfigcontainer'
     },
     {
-        xtype: "pivotconfigpanel"
+        xtype: 'pivotconfigpanel'
     },
     {
-        xtype: "pivotgrid"
+        xtype: 'pivotgrid'
     },
     {
-        xtype: "polar"
+        xtype: 'polar'
     },
     {
-        xtype: "progress"
+        xtype: 'progress'
     },
     {
-        xtype: "progressbar"
+        xtype: 'progressbar'
     },
     {
-        xtype: "progressbarwidget"
+        xtype: 'progressbarwidget'
     },
     {
-        xtype: "propertygrid"
+        xtype: 'propertygrid'
     },
     {
-        xtype: "quicktip"
+        xtype: 'quicktip'
     },
     {
-        xtype: "radio",
-        group: "field"
+        xtype: 'radio',
+        group: 'field'
     },
     {
-        xtype: "radiofield"
+        xtype: 'radiofield'
     },
     {
-        xtype: "radiogroup"
+        xtype: 'radiogroup'
     },
     {
-        xtype: "rating"
+        xtype: 'rating'
     },
     {
-        xtype: "roweditor"
+        xtype: 'roweditor'
     },
     {
-        xtype: "roweditorbuttons"
+        xtype: 'roweditorbuttons'
     },
     {
-        xtype: "rownumberer"
+        xtype: 'rownumberer'
     },
     {
-        xtype: "scrollindicator"
+        xtype: 'scrollindicator'
     },
     {
-        xtype: "segmentedbutton"
+        xtype: 'segmentedbutton'
     },
     {
-        xtype: "slider"
+        xtype: 'slider'
     },
     {
-        xtype: "sliderfield"
+        xtype: 'sliderfield'
     },
     {
-        xtype: "slidertip"
+        xtype: 'slidertip'
     },
     {
-        xtype: "sliderwidget"
+        xtype: 'sliderwidget'
     },
     {
-        xtype: "spacefilling"
+        xtype: 'spacefilling'
     },
     {
-        xtype: "sparklinebar"
+        xtype: 'sparklinebar'
     },
     {
-        xtype: "sparklinebox"
+        xtype: 'sparklinebox'
     },
     {
-        xtype: "sparklinebullet"
+        xtype: 'sparklinebullet'
     },
     {
-        xtype: "sparklinediscrete"
+        xtype: 'sparklinediscrete'
     },
     {
-        xtype: "sparklineline"
+        xtype: 'sparklineline'
     },
     {
-        xtype: "sparklinepie"
+        xtype: 'sparklinepie'
     },
     {
-        xtype: "sparklinetristate"
+        xtype: 'sparklinetristate'
     },
     {
-        xtype: "spinnerfield"
+        xtype: 'spinnerfield'
     },
     {
-        xtype: "splitbutton"
+        xtype: 'splitbutton'
     },
     {
-        xtype: "splitter"
+        xtype: 'splitter'
     },
     {
-        xtype: "statusbar"
+        xtype: 'statusbar'
     },
     {
-        xtype: "surface"
+        xtype: 'surface'
     },
     {
-        xtype: "tab",
-        group: "folder"
+        xtype: 'tab',
+        group: 'folder'
     },
     {
-        xtype: "tabbar"
+        xtype: 'tabbar'
     },
     {
-        xtype: "tablepanel",
-        group: "folder"
+        xtype: 'tablepanel',
+        group: 'folder'
     },
     {
-        xtype: "tableview"
+        xtype: 'tableview'
     },
     {
-        xtype: "tabpanel",
-        group: "folder"
+        xtype: 'tabpanel',
+        group: 'folder'
     },
     {
-        xtype: "tagfield"
+        xtype: 'tagfield'
     },
     {
-        xtype: "taskbar"
+        xtype: 'taskbar'
     },
     {
-        xtype: "tbfill"
+        xtype: 'tbfill'
     },
     {
-        xtype: "tbitem"
+        xtype: 'tbitem'
     },
     {
-        xtype: "tbseparator"
+        xtype: 'tbseparator'
     },
     {
-        xtype: "tbspacer"
+        xtype: 'tbspacer'
     },
     {
-        xtype: "tbtext"
+        xtype: 'tbtext'
     },
     {
-        xtype: "templatecolumn"
+        xtype: 'templatecolumn'
     },
     {
-        xtype: "textarea",
-        group: "field"
+        xtype: 'textarea',
+        group: 'field'
     },
     {
-        xtype: "textareafield"
+        xtype: 'textareafield'
     },
     {
-        xtype: "textfield",
-        group: "field"
+        xtype: 'textfield',
+        group: 'field'
     },
     {
-        xtype: "timefield",
-        group: "clock"
+        xtype: 'timefield',
+        group: 'clock'
     },
     {
-        xtype: "timepicker",
-        group: "clock"
+        xtype: 'timepicker',
+        group: 'clock'
     },
     {
-        xtype: "tip"
+        xtype: 'tip'
     },
     {
-        xtype: "title"
+        xtype: 'title'
     },
     {
-        xtype: "toast"
+        xtype: 'toast'
     },
     {
-        xtype: "tool"
+        xtype: 'tool'
     },
     {
-        xtype: "toolbar"
+        xtype: 'toolbar'
     },
     {
-        xtype: "tooltip"
+        xtype: 'tooltip'
     },
     {
-        xtype: "trayclock"
+        xtype: 'trayclock'
     },
     {
-        xtype: "treecolumn"
+        xtype: 'treecolumn'
     },
     {
-        xtype: "treelist"
+        xtype: 'treelist'
     },
     {
-        xtype: "treelistitem"
+        xtype: 'treelistitem'
     },
     {
-        xtype: "treepanel"
+        xtype: 'treepanel'
     },
     {
-        xtype: "treepicker"
+        xtype: 'treepicker'
     },
     {
-        xtype: "treeview"
+        xtype: 'treeview'
     },
     {
-        xtype: "trigger"
+        xtype: 'trigger'
     },
     {
-        xtype: "triggerfield"
+        xtype: 'triggerfield'
     },
     {
-        xtype: "uxiframe"
+        xtype: 'uxiframe'
     },
     {
-        xtype: "video"
+        xtype: 'video'
     },
     {
-        xtype: "viewport",
-        group: "folder"
+        xtype: 'viewport',
+        group: 'folder'
     },
     {
-        xtype: "wallpaper"
+        xtype: 'wallpaper'
     },
     {
-        xtype: "widget"
+        xtype: 'widget'
     },
     {
-        xtype: "widgetcolumn"
+        xtype: 'widgetcolumn'
     },
     {
-        xtype: "window",
-        group: "folder"
-    },
+        xtype: 'window',
+        group: 'folder'
+    }
 ];
 
 export function getGroup(xtype) {
@@ -544,12 +544,16 @@ let layouts = {
     type: ['none','absolute','vbox','hbox','center','fit','column','table'],
     pack: ['none', 'start', 'center','end'],
     align: ['none', 'begin','middle','end','stretch','stretchmax'],
+    dock: ['top','bottom','left','right'],
+    flex: [...'0123456789'].map(d=>+d)
 };
 
 export { xtypes, layouts };
 
 
 // http://docs.sencha.com/extjs/6.0.2-classic/Ext.layout.container.VBox.html#cfg-pack
+
+// flex docked
 
 // only hit direct children
 // checkbox propz?

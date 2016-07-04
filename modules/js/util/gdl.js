@@ -12,7 +12,7 @@ export function ready(callback) {
             if (document.readyState != 'loading') callback();
         });
     }
-};
+}
 
 export const math = {
     seed: 4, // https://xkcd.com/221/,
@@ -64,5 +64,5 @@ export const browser = {
     },
     screenWidth() {
         return window.screen.availWidth || window.screen.width || 1920;
-    },
+    }
 };

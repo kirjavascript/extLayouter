@@ -21,8 +21,9 @@
         <?= node.xtype ?>
     </a>
 
-    <? if (getGroup(node.xtype) == 'folder') { ?>
-        <span class="layoutData">
+    <span class="layoutData">
+
+        <? if (getGroup(node.xtype) == 'folder') { ?>
 
             <span class="type">
                 <span class="label">
@@ -31,7 +32,7 @@
                 <?- icons.layout ?>
             </span>
             
-            <? if (layoutData.type == 'vbox') { ?>
+            <? if (layoutData.type == 'vbox' || layoutData.type == 'hbox') { ?>
 
                 <span class="pack">
                     <span class="label">
@@ -48,8 +49,25 @@
                 </span>
 
             <? } ?>
+        
+        <? } else { ?>
 
-        </span>
-    <? } ?>
+            <span class="dock">
+                <span class="label">
+                    <?= node.dock ?>
+                </span>
+                <?- icons.dock ?>
+            </span>
+
+            <span class="flex">
+                <span class="label">
+                    <?= node.flex ?>
+                </span>
+                <?- icons.flex ?>
+            </span>
+
+        <? } ?>
+
+    </span>
 
 </span>
